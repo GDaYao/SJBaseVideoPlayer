@@ -15,7 +15,7 @@
     "ios": "8.0"
   },
   "source": {
-    "git": "https://github.com/changsanjiang/SJBaseVideoPlayer.git",
+    "git": "https://github.com/GDaYao/SJBaseVideoPlayer.git",
     "tag": "v3.2.3"
   },
   "frameworks": [
