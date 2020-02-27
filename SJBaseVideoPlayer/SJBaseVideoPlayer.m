@@ -338,13 +338,23 @@ typedef struct _SJPlayerControlInfo {
                         case SJPanGestureTriggeredPosition_Left: {
                             CGFloat value = self.deviceVolumeAndBrightnessManager.brightness - translate.y * 0.005;
                             if ( value < 0 ) value = 0;
-                            self.deviceVolumeAndBrightnessManager.brightness = value;
+#warning user-warning 更改亮度设置回调--
+                            //self.deviceVolumeAndBrightnessManager.brightness = value;
+                            if (self.brightnessRefreshUIDidChangeBlock) {
+                                self.brightnessRefreshUIDidChangeBlock(self.deviceVolumeAndBrightnessManager, value);
+                            }
+                            
                         }
                             break;
                             /// volume
                         case SJPanGestureTriggeredPosition_Right: {
                             CGFloat value = translate.y * 0.005;
-                            self.deviceVolumeAndBrightnessManager.volume -= value;
+#warning user-warning 更改音量数据设置回调--
+                            //self.deviceVolumeAndBrightnessManager.volume -= value;
+                            if (self.volumeRefreshUIDidChangeBlock) {
+                                self.volumeRefreshUIDidChangeBlock(self.deviceVolumeAndBrightnessManager, self.deviceVolumeAndBrightnessManager.volume-value);
+                            }
+                            
                         }
                             break;
                     }

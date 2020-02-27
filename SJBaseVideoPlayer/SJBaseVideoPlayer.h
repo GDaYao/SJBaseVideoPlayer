@@ -55,6 +55,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) __kindof UIView *view;
 @property (nonatomic, weak, nullable) id <SJVideoPlayerControlLayerDataSource> controlLayerDataSource;
 @property (nonatomic, weak, nullable) id <SJVideoPlayerControlLayerDelegate> controlLayerDelegate;
+
+
+#warning user-warning 更改音频+亮度设置block回调
+// 开发者主动添加回调,更新亮度、音频UI方法
+@property (nonatomic,copy) void(^volumeRefreshUIDidChangeBlock)(id<SJDeviceVolumeAndBrightnessManager> mgr,float volume);
+@property (nonatomic,copy) void(^brightnessRefreshUIDidChangeBlock)(id<SJDeviceVolumeAndBrightnessManager> mgr,float brightness);
+
 @end
 
 #pragma mark - present view
