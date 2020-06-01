@@ -43,9 +43,6 @@
     ],
     "SJUIKit/SQLite3": [
 
-    ],
-    "Reachability": [
-
     ]
   },
   "subspecs": [
@@ -67,54 +64,6 @@
       "name": "AVPlayer",
       "source_files": "SJBaseVideoPlayer/AVPlayer/**/*.{h,m}",
       "dependencies": {
-        "SJBaseVideoPlayer/Common": [
-
-        ]
-      }
-    },
-    {
-      "name": "IJKPlayer",
-      "source_files": "SJBaseVideoPlayer/IJKPlayer/**/*.{h,m}",
-      "dependencies": {
-        "ijkplayerssl": [
-
-        ],
-        "SJBaseVideoPlayer/Common": [
-
-        ]
-      }
-    },
-    {
-      "name": "AliPlayer",
-      "source_files": "SJBaseVideoPlayer/AliPlayer/**/*.{h,m}",
-      "dependencies": {
-        "AliPlayerSDK_iOS": [
-
-        ],
-        "SJBaseVideoPlayer/Common": [
-
-        ]
-      }
-    },
-    {
-      "name": "AliVodPlayer",
-      "source_files": "SJBaseVideoPlayer/AliVodPlayer/**/*.{h,m}",
-      "dependencies": {
-        "AliyunPlayer_iOS/AliyunVodPlayerSDK": [
-
-        ],
-        "SJBaseVideoPlayer/Common": [
-
-        ]
-      }
-    },
-    {
-      "name": "PLPlayer",
-      "source_files": "SJBaseVideoPlayer/PLPlayer/**/*.{h,m}",
-      "dependencies": {
-        "PLPlayerKit": [
-
-        ],
         "SJBaseVideoPlayer/Common": [
 
         ]

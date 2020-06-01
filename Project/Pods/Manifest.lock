@@ -1,9 +1,7 @@
 PODS:
   - Masonry (1.1.0)
-  - Reachability (3.2)
   - SJBaseVideoPlayer (3.2.3):
     - Masonry
-    - Reachability
     - SJBaseVideoPlayer/AVPlayer (= 3.2.3)
     - SJBaseVideoPlayer/Common (= 3.2.3)
     - SJUIKit/AttributesFactory (>= 0.0.0.38)
@@ -12,7 +10,6 @@ PODS:
     - SJUIKit/SQLite3
   - SJBaseVideoPlayer/AVPlayer (3.2.3):
     - Masonry
-    - Reachability
     - SJBaseVideoPlayer/Common
     - SJUIKit/AttributesFactory (>= 0.0.0.38)
     - SJUIKit/ObserverHelper
@@ -20,7 +17,6 @@ PODS:
     - SJUIKit/SQLite3
   - SJBaseVideoPlayer/Common (3.2.3):
     - Masonry
-    - Reachability
     - SJBaseVideoPlayer/ResourceLoader
     - SJUIKit/AttributesFactory (>= 0.0.0.38)
     - SJUIKit/ObserverHelper
@@ -28,7 +24,6 @@ PODS:
     - SJUIKit/SQLite3
   - SJBaseVideoPlayer/ResourceLoader (3.2.3):
     - Masonry
-    - Reachability
     - SJUIKit/AttributesFactory (>= 0.0.0.38)
     - SJUIKit/ObserverHelper
     - SJUIKit/Queues
@@ -51,9 +46,8 @@ DEPENDENCIES:
   - SJBaseVideoPlayer (from `../../SJBaseVideoPlayer`)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - Masonry
-    - Reachability
     - SJUIKit
 
 EXTERNAL SOURCES:
@@ -62,10 +56,9 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  Reachability: 33e18b67625424e47b6cde6d202dce689ad7af96
-  SJBaseVideoPlayer: 693c61be0c5b04f2cad0a5ac9f4d6ea4fff1e898
+  SJBaseVideoPlayer: 2a07d7a0ba7338435a3bf4effc77bfbd7373d2dd
   SJUIKit: e94b093420a76fe8c1751d12b83e9e2b007e409a
 
 PODFILE CHECKSUM: 13070d80da18811530102acb9ec4b9c927f01dee
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.9.1

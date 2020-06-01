@@ -29,34 +29,34 @@ Pod::Spec.new do |s|
       ss.dependency 'SJBaseVideoPlayer/Common'
   end
   
-  s.subspec 'IJKPlayer' do |ss|
-      ss.source_files = 'SJBaseVideoPlayer/IJKPlayer/**/*.{h,m}'
-      ss.dependency 'ijkplayerssl'
-      ss.dependency 'SJBaseVideoPlayer/Common'
-  end
+#  s.subspec 'IJKPlayer' do |ss|
+#      ss.source_files = 'SJBaseVideoPlayer/IJKPlayer/**/*.{h,m}'
+#      ss.dependency 'ijkplayerssl'
+#      ss.dependency 'SJBaseVideoPlayer/Common'
+#  end
   
-  s.subspec 'AliPlayer' do |ss|
-    ss.source_files = 'SJBaseVideoPlayer/AliPlayer/**/*.{h,m}'
-    ss.dependency 'AliPlayerSDK_iOS'
-    ss.dependency 'SJBaseVideoPlayer/Common'
-  end
+#  s.subspec 'AliPlayer' do |ss|
+#    ss.source_files = 'SJBaseVideoPlayer/AliPlayer/**/*.{h,m}'
+#    ss.dependency 'AliPlayerSDK_iOS'
+#    ss.dependency 'SJBaseVideoPlayer/Common'
+#  end
   
-  s.subspec 'AliVodPlayer' do |ss|
-      ss.source_files = 'SJBaseVideoPlayer/AliVodPlayer/**/*.{h,m}'
-      ss.dependency 'AliyunPlayer_iOS/AliyunVodPlayerSDK'
-      ss.dependency 'SJBaseVideoPlayer/Common'
-  end
+#  s.subspec 'AliVodPlayer' do |ss|
+#      ss.source_files = 'SJBaseVideoPlayer/AliVodPlayer/**/*.{h,m}'
+#      ss.dependency 'AliyunPlayer_iOS/AliyunVodPlayerSDK'
+#      ss.dependency 'SJBaseVideoPlayer/Common'
+#  end
   
-  s.subspec 'PLPlayer' do |ss|
-    ss.source_files = 'SJBaseVideoPlayer/PLPlayer/**/*.{h,m}'
-    ss.dependency 'PLPlayerKit'
-    ss.dependency 'SJBaseVideoPlayer/Common'
-  end
+#  s.subspec 'PLPlayer' do |ss|
+#    ss.source_files = 'SJBaseVideoPlayer/PLPlayer/**/*.{h,m}'
+#    ss.dependency 'PLPlayerKit'
+#    ss.dependency 'SJBaseVideoPlayer/Common'
+#  end
   
   s.dependency 'Masonry'
   s.dependency 'SJUIKit/AttributesFactory', '>= 0.0.0.38'
   s.dependency 'SJUIKit/ObserverHelper'
   s.dependency 'SJUIKit/Queues'
   s.dependency 'SJUIKit/SQLite3'
-  s.dependency 'Reachability'
+  #s.dependency 'Reachability'
 end

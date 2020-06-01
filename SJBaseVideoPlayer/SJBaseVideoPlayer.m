@@ -16,7 +16,6 @@
 #import "SJTimerControl.h"
 #import "UIScrollView+ListViewAutoplaySJAdd.h"
 #import "SJAVMediaPlaybackController.h"
-#import "SJReachability.h"
 #import "SJControlLayerAppearStateManager.h"
 #import "SJFitOnScreenManager.h"
 #import "SJFlipTransitionManager.h"
@@ -139,8 +138,8 @@ typedef struct _SJPlayerControlInfo {
     id<SJFlipTransitionManager> _flipTransitionManager;
     
     /// Network status
-    id<SJReachability> _reachability;
-    id<SJReachabilityObserver> _reachabilityObserver;
+//    id<SJReachability> _reachability;
+//    id<SJReachabilityObserver> _reachabilityObserver;
     
     /// Scroll
     id<SJFloatSmallViewController> _Nullable _floatSmallViewController;
@@ -199,7 +198,6 @@ typedef struct _SJPlayerControlInfo {
     });
 
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        [self reachability];
         [self gestureControl];
         [self _configAVAudioSession];
     });
@@ -1144,7 +1142,7 @@ typedef struct _SJPlayerControlInfo {
 - (void)playbackController:(id<SJVideoPlayerPlaybackController>)controller timeControlStatusDidChange:(SJPlaybackTimeControlStatus)status {
     
     BOOL isBuffering = controller.reasonForWaitingToPlay == SJWaitingToMinimizeStallsReason;
-    isBuffering ? [self.reachability startRefresh] : [self.reachability stopRefresh];
+    //isBuffering ? [self.reachability startRefresh] : [self.reachability stopRefresh];
     
     if ( [self.controlLayerDelegate respondsToSelector:@selector(videoPlayerPlaybackStatusDidChange:)] ) {
         [self.controlLayerDelegate videoPlayerPlaybackStatusDidChange:self];
@@ -1255,41 +1253,41 @@ typedef struct _SJPlayerControlInfo {
 
 @implementation SJBaseVideoPlayer (Network)
 
-- (void)setReachability:(id<SJReachability> _Nullable)reachability {
-    _reachability = reachability;
-    [self _needUpdateReachabilityProperties];
-}
-
-- (id<SJReachability>)reachability {
-    if ( _reachability )
-        return _reachability;
-    _reachability = [SJReachability shared];
-    [self _needUpdateReachabilityProperties];
-    return _reachability;
-}
-
-- (void)_needUpdateReachabilityProperties {
-    if ( _reachability == nil ) return;
-    
-    _reachabilityObserver = [_reachability getObserver];
-    __weak typeof(self) _self = self;
-    _reachabilityObserver.networkStatusDidChangeExeBlock = ^(id<SJReachability> r) {
-        __strong typeof(_self) self = _self;
-        if ( !self ) return;
-        if ( [self.controlLayerDelegate respondsToSelector:@selector(videoPlayer:reachabilityChanged:)] ) {
-            [self.controlLayerDelegate videoPlayer:self reachabilityChanged:r.networkStatus];
-        }
-    };
-}
-
-- (id<SJReachabilityObserver>)reachabilityObserver {
-    id<SJReachabilityObserver> observer = objc_getAssociatedObject(self, _cmd);
-    if ( observer == nil ) {
-        observer = [self.reachability getObserver];
-        objc_setAssociatedObject(self, _cmd, observer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-    }
-    return observer;
-}
+//- (void)setReachability:(id<SJReachability> _Nullable)reachability {
+//    _reachability = reachability;
+//    [self _needUpdateReachabilityProperties];
+//}
+//
+//- (id<SJReachability>)reachability {
+//    if ( _reachability )
+//        return _reachability;
+//    _reachability = [SJReachability shared];
+//    [self _needUpdateReachabilityProperties];
+//    return _reachability;
+//}
+//
+//- (void)_needUpdateReachabilityProperties {
+//    if ( _reachability == nil ) return;
+//
+//    _reachabilityObserver = [_reachability getObserver];
+//    __weak typeof(self) _self = self;
+//    _reachabilityObserver.networkStatusDidChangeExeBlock = ^(id<SJReachability> r) {
+//        __strong typeof(_self) self = _self;
+//        if ( !self ) return;
+//        if ( [self.controlLayerDelegate respondsToSelector:@selector(videoPlayer:reachabilityChanged:)] ) {
+//            [self.controlLayerDelegate videoPlayer:self reachabilityChanged:r.networkStatus];
+//        }
+//    };
+//}
+//
+//- (id<SJReachabilityObserver>)reachabilityObserver {
+//    id<SJReachabilityObserver> observer = objc_getAssociatedObject(self, _cmd);
+//    if ( observer == nil ) {
+//        observer = [self.reachability getObserver];
+//        objc_setAssociatedObject(self, _cmd, observer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+//    }
+//    return observer;
+//}
 @end
 
 #pragma mark -

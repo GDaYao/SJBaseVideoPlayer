@@ -353,16 +353,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface SJBaseVideoPlayer (Network)
 
 ///
-/// 网络状态监测
-///
-///         了解更多请前往协议头文件查看
-///
-@property (nonatomic, strong, null_resettable) id<SJReachability> reachability;
 
-///
-/// 观察者
-///
-@property (nonatomic, strong, readonly) id<SJReachabilityObserver> reachabilityObserver;
 @end
 
 

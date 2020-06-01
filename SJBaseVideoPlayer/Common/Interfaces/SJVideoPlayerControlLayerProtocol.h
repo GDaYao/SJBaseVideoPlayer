@@ -9,7 +9,6 @@
 #ifndef SJVideoPlayerControlLayerProtocol_h
 #define SJVideoPlayerControlLayerProtocol_h
 #import <UIKit/UIKit.h>
-#import "SJReachabilityDefines.h"
 #import "SJVideoPlayerPlayStatusDefines.h"
 #import "SJVideoPlayerPlaybackControllerDefines.h"
 #import "SJPlayerGestureControlDefines.h"
@@ -171,7 +170,6 @@ SJPlaybackControlDelegate;
 @optional
 /// 网络状态变更
 /// 当网络状态变更时, 会回调这个方法
-- (void)videoPlayer:(__kindof SJBaseVideoPlayer *)videoPlayer reachabilityChanged:(SJNetworkStatus)status;
 @end
 
 
